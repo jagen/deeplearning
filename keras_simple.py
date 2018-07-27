@@ -86,3 +86,9 @@ tb = TensorBoard(log_dir='~/logs')
 # 训练模型
 model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, verbose=2, validation_data=(X_test,Y_test), callbacks=[tb])
 
+# 模型评分
+score = model.evaluate(X_test, Y_test, verbose=0)
+
+# 输出结果
+print('Test score:', score[0])
+print('Accuracy: %.2f%%' % (score[1] * 1000))
