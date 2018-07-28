@@ -54,7 +54,7 @@ Y_test = np_utils.to_categorical(y_test, nb_classes)
 model = Sequential()
 
 model.add(Convolution2D(nb_filters, kernel_size,
-                        padding=='valid',
+                        padding='valid',
                         input_shape=input_shape))
 model.add(LeakyReLU(alpha=.003))
 #model.add(UpSampling2D(size=pool_size))
