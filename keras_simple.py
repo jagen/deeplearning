@@ -81,10 +81,10 @@ model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accur
 print('Compiled')
 
 # 设置TensorBoard
-tb = TensorBoard(log_dir='~/logs')
+tb = TensorBoard(log_dir='./logs')
 
 # 训练模型
-model.fit(X_train, Y_train, batch_size=batch_size, nb_epoch=nb_epoch, verbose=2, validation_data=(X_test,Y_test), callbacks=[tb])
+model.fit(X_train, Y_train, batch_size=batch_size, epochs=nb_epoch, verbose=2, validation_data=(X_test,Y_test), callbacks=[tb])
 
 # 模型评分
 score = model.evaluate(X_test, Y_test, verbose=0)
